@@ -39,7 +39,7 @@ class Crumbler:
         Crumbler.CRUMBLERS.append(self)
     
     def out_of_bounds(self):
-        return self.x < 0 or self.y < 0 or self.x > 1024 or self.y > 768
+        return self.x < 0 or self.y < 0 or self.x > 1920 or self.y > 1080
         
     def step(self):
         self.x += self.a_x
@@ -49,7 +49,7 @@ class Crumbler:
             Crumbler.CRUMBLERS.remove(self)
             del(self)
             return
-        print "px %d %d %02x%02x%02x"%(self.x,self.y,self.r,self.g,self.b)
+        print "PX %d %d %02x%02x%02x"%(self.x,self.y,self.r,self.g,self.b)
         if self.steps%7==0 or random.randint(0,5) == 3:
             x = random.randint(-20,20)
             if x%3 == 0:
